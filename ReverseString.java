@@ -8,6 +8,8 @@ public class ReverseString {
    *  To call this method in another method use
    *  "ReverseString.reverseString(str)"
    *
+   *  reverseString() reverses the input string.
+   *
    *  @param str the string to be reversed.
    *
    *  @return the reversed version of the input string.
