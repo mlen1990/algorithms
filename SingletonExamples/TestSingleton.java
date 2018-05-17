@@ -16,5 +16,11 @@ public class TestSingleton {
 		l.printStuff("Stuff Printed");
 		System.out.println(Arrays.toString(l.createArray("LazySingleton")));
 
+		System.out.println("-------------------------------------------");
+
+		ConcurrentSingleton c = ConcurrentSingleton.getInstance();
+		c.printStuff("Stuff Printed");
+		System.out.println(Arrays.toString(c.createArray("ConcurrentSingleton")));
+
 	}
 }
