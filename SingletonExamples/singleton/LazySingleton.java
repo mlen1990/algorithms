@@ -2,7 +2,7 @@
 
 package singleton;
 
-public class LazySingleton {
+public class LazySingleton implements DoStuff {
 
 	private static LazySingleton instance;
 
@@ -19,5 +19,9 @@ public class LazySingleton {
 
 	public void printStuff(String stuff) {
 		System.out.println("printStuff: " + stuff);
+	}
+
+	public String[] createArray(String stuff) {
+		return stuff.split("");
 	}
 }

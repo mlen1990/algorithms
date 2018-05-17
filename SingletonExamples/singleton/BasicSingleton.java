@@ -2,7 +2,7 @@
 
 package singleton;
 
-public class BasicSingleton {
+public class BasicSingleton implements DoStuff {
 
 	private static BasicSingleton instance = new BasicSingleton();
 
@@ -15,5 +15,9 @@ public class BasicSingleton {
 
 	public void printStuff(String stuff) {
 		System.out.println("printStuff: " + stuff);
+	}
+
+	public String[] createArray(String stuff) {
+		return stuff.split("");
 	}
 }
