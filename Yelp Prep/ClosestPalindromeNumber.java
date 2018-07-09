@@ -1,5 +1,5 @@
 // running time O(d), where d is the number of digits in the number
-public class ClosestPalindrome {
+public class ClosestPalindromeNumber {
 
     private static boolean isPalindrome(String s) {
         int length = s.length();

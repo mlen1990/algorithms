@@ -9,17 +9,17 @@ class Interval {
     int end;
 
     Interval() {
-        start = 0;
-        end = 0;
+        this.start = 0;
+        this.end = 0;
     }
     
     Interval(int s, int e) {
-        start = s;
-        end = e;
+        this.start = s;
+        this.end = e;
     }
 
     public String toString() {
-        return "[" + start + ", " + end + "]";
+        return "[" + this.start + ", " + this.end + "]";
     }
 }
 
