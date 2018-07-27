@@ -27,45 +27,32 @@ class StackExample1 {
 		Stack<Character> stack = new Stack<Character>();
 		char[] input = expression.toCharArray();
 		for (int i = 0; i < input.length; i++) {
-			switch (input[i]) {
-				case '{':
-				case '[':
-				case '(':
-					stack.push(input[i]);
-					break;
-
-				case '}':
-				case ']':
-				case ')':
-					if (stack.empty()) {
-						return false;
-					}
+			if (map.containsKey(input[i])) {
+				stack.push(input[i]);
+			} else {
+				if (stack.empty()) {
+					return false;
+				} else {
 					Character item = stack.peek();
 					if (map.get(item) == input[i]) {
 						stack.pop();
 					} else {
 						return false;
 					}
-					break;
+				}
 			}
 		}
-		if (stack.empty()) {
-			return true;
-		}
-		return false;
+		return stack.empty();
 	}
 
-
+	// javac StackExample1.java && java -ea StackExample1
 	public static void main(String []argh) {
-		Scanner sc = new Scanner(System.in);
-		while (sc.hasNext()) {
-
-			if (isBalanced(sc.next())) {
-				System.out.println("true");
-			} else {
-				System.out.println("false");
-			}
-		}
-		
+		assert(true == isBalanced("{}([])"));
+	    assert(false == isBalanced("([}])"));
+	    assert(true == isBalanced("([])"));
+	    assert(true == isBalanced("()[]{}[][]"));
+	    assert(false == isBalanced("()[]{}[][]}"));
+	    assert(false == isBalanced("()[]{]}[][]"));
+	    assert(false == isBalanced("()]"));
 	}
 }
